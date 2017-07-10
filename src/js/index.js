@@ -41,7 +41,8 @@
         // event to reset button
         $('#reset-btn').on('click', function () {
             $('.filter-select').each(function () {
-                $(this).multiselect('enable')
+                $(this).multiselect('selectAll', false)
+                    .multiselect('enable')
                     .multiselect('refresh');
 
                 isDrillDown = false;
