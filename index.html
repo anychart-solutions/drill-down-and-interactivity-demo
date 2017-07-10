@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dassault Systèmes Demo</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+            integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+            crossorigin="anonymous"></script>
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-multiselect/0.9.13/css/bootstrap-multiselect.css"/>
+
+    <link rel="stylesheet" href="src/css/style.css">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-multiselect/0.9.13/js/bootstrap-multiselect.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/proj4js/2.3.15/proj4.js"></script>
+
+    <script src="https://cdn.anychart.com/themes/latest/dark_blue.min.js"></script>
+    <script src="https://cdn.anychart.com/js/latest/anychart-bundle.min.js"></script>
+    <script src="https://cdn.anychart.com/geodata/1.2.0/countries/united_states_of_america/united_states_of_america.js"></script>
+
+    <script src="src/js/data.js"></script>
+    <script src="src/js/index.js"></script>
+</head>
+
+<body>
+<div id="filterUi">
+    <div class="btn-group" role="group">
+        <label for="filter-years">Years: </label>
+        <span class="multiselect-native-select">
+            <select class="filter-select" id="filter-years" multiple="multiple">
+                <optgroup label="All years" class="group-1" id="filter-years-all"></optgroup>
+            </select>
+        </span>
+    </div>
+    <div class="btn-group">
+        <label for="filter-products">Products: </label>
+        <span class="multiselect-native-select">
+            <select class="filter-select" id="filter-products" multiple="multiple">
+                <optgroup label="All products" class="group-1" id="filter-products-all"></optgroup>
+            </select>
+        </span>
+    </div>
+
+    <div class="btn-group">
+        <label for="filter-regions">Regions: </label>
+        <span class="multiselect-native-select">
+            <select class="filter-select" id="filter-regions" multiple="multiple">
+                <optgroup label="All regions" class="group-1" id="filter-regions-all"></optgroup>
+            </select>
+        </span>
+    </div>
+
+    <div class="btn-group">
+        <a class="btn btn-default" id="reset-btn">Reset</a>
+    </div>
+</div>
+<div id="container"></div>
+</body>
+</html>
