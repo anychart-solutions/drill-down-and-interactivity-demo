@@ -1,6 +1,6 @@
 (function () {
     // Global scope variables.
-    var stage, map, column, columnFirst, columnSecond, donut;
+    var stage, map, column, columnFirst, columnSecond, donut, columnLabel;
     var mapSeries;
     var mapData, columnDataFirst, columnDataSecond, donutData;
 
@@ -49,6 +49,8 @@
 
                 preprocessData();
                 applyFilters();
+
+                columnLabel.enabled(false);
             });
         });
     });
@@ -58,7 +60,7 @@
         var $filterByYears = $('#filter-years');
         var filteredByYearsValue;
 
-        anychart.theme(anychart.themes.darkBlue);
+        anychart.theme(anychart.themes.lightBlue);
         stage = anychart.graphics.create('container');
         stage.suspend();
 
@@ -84,7 +86,7 @@
         columnSecond.yScale(scale);
 
         // create column label
-        var columnLabel = column.label(0);
+        columnLabel = column.label(0);
         columnLabel.enabled(false)
             .text('Back to Years')
             .background('#fff')
@@ -119,11 +121,13 @@
         donut.innerRadius('30%');
         donut.bounds(0, '50%', '50%', '50%');
         donut.title('Products distribution');
+        donut.labels().fontColor('#fff');
 
         donut.legend()
-            .position('rightCenter')
-            .itemsLayout('vertical')
-            .positionMode('inside');
+            .width(385)
+            .position('bottom');
+            // .itemsLayout('vertical');
+            // .positionMode('inside');
         donut.fill(function () {
                 var exploded = this.iterator.meta('exploded');
                 return exploded ? anychart.color.lighten(this.sourceColor, 0.25) : anychart.color.darken(this.sourceColor, 0.25);
@@ -138,7 +142,8 @@
         map.bounds('50%', '50%', '50%', '50%');
         map.title('Distribution by regions');
         map.unboundRegions()
-            .fill('#bbb');
+            .fill('#bbb')
+            .stroke('#cfd8dc');
         mapSeries = map.choropleth(mapData);
         mapSeries.geoIdField('code_hasc');
 

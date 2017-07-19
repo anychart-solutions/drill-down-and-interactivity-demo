@@ -5,11 +5,16 @@ html, body {
     padding: 0;
 }
 
+.iframe {
+    height: 800px;
+}
+
 #container {
+    padding-top: 65px;
     border: 0 solid blue;
     width: 100%;
-    height: 800px;
-    padding-top: 65px;
+    height: 100%;
+    margin-top: -1px;
 }
 
 #filterUi {
@@ -18,16 +23,46 @@ html, body {
     left: 0;
     width: 100%;
     padding: 15px 5px;
-    background: rgb(55, 71, 79);
-    border-bottom: 1px solid #263238;
+    background: #fff;
+    border: 1px solid #cfd8dc;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
 }
 
-#filterUi .btn-group {
-    margin-right: 10px;
+.iframe #filterUi {
+    position: relative;
+}
+
+.iframe #container {
+    padding-top: 0;
 }
 
 #filterUi .btn-group > label {
-    color: #fff;
+    color: #323c44;
     margin-left: 10px;
     margin-right: 5px;
+    margin-bottom: 0;
+    font-weight: 400;
+}
+
+#reset-btn {
+    margin-left: 10px;
+}
+
+@media screen and (max-width: 768px) {
+    #filterUi {
+        position: relative;
+    }
+
+    #container {
+        padding-top: 0;
+    }
+
+    #filterUi {
+        padding-bottom: 5px;
+    }
+
+    #filterUi > .btn-group {
+        margin-bottom: 10px;
+    }
 }
